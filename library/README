@@ -1,0 +1,3 @@
+listedCorp.dic:
+a dictionary storing listed corporations and their short cuts,
+this dictionary will help entity linking.
