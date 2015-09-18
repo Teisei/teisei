@@ -8,6 +8,7 @@ import edu.ecnu.teisei.utils.StringUtil;
 public class NewsSentRelation implements Comparable<NewsSentRelation> {
     String url;
     String title;
+    String time;
     String sentence;
     String entities;
     String relations;
@@ -16,9 +17,10 @@ public class NewsSentRelation implements Comparable<NewsSentRelation> {
         String record[] = text.split(StringUtil._read_split_);
         this.url = record[0];
         this.title = record[1];
-        this.sentence = record[2];
-        this.entities = record[3];
-        this.relations = record[4];
+        this.time = record[2];
+        this.sentence = record[3];
+        this.entities = record[4];
+        this.relations = record[5];
     }
 
     public String getUrl() {
@@ -41,12 +43,33 @@ public class NewsSentRelation implements Comparable<NewsSentRelation> {
         return relations;
     }
 
-    public NewsSentRelation(String url, String title, String sentence, String entities, String relations) {
+    public void setEntities(String entities) {
+        this.entities = entities;
+    }
+
+    public void setRelations(String relations) {
+        this.relations = relations;
+    }
+
+
+
+    public NewsSentRelation(String url, String title,String time, String sentence, String entities, String relations) {
         this.url = url;
         this.title = title;
+        this.time = time;
         this.sentence = sentence;
         this.entities = entities;
         this.relations = relations;
+    }
+
+    @Override
+    public String toString() {
+        return  url + '\t' +
+                title + '\t' +
+                time + '\t' +
+                sentence + '\t' +
+                entities + '\t' +
+                relations;
     }
 
     public int compareTo(NewsSentRelation o) {

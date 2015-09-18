@@ -10,13 +10,21 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>ir</module>
-        <module>app</module>
+        <module>schema</module>
+        <module>algo</module>
     </modules>
     <dependencies>
         <dependency>
             <groupId>dom4j</groupId>
             <artifactId>dom4j</artifactId>
             <version>1.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>trove</groupId>
+            <artifactId>trove</artifactId>
+            <version>3.0.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/trove.jar</systemPath>
         </dependency>
     </dependencies>
 
